@@ -1,0 +1,21 @@
+{{#modal-dialog
+		onClose=(action onclose)
+    wrapperClass="slide-in-modal"
+    containerClass="large-modal"
+    translucentOverlay=true
+    overlayPosition="sibling"
+    animatable=true}}
+
+  <div class="title-container">
+    <h3 class="header">Header</h3>
+  </div>
+
+  <div class="content-container">
+  	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque magna ac dictum laoreet. Proin non justo varius, varius leo ut, dapibus urna. Praesent convallis posuere nisi eu molestie. Duis fermentum consectetur sapien quis interdum. Maecenas gravida aliquam lacus, eget tempor lectus rutrum eget. Maecenas non libero eget justo eleifend semper non at massa. Nulla dapibus mauris feugiat mauris facilisis, vitae tristique leo eleifend. Fusce at lectus et orci porttitor eleifend. Nulla vel libero ligula. Sed vitae auctor justo. Sed commodo nibh diam, nec sodales turpis vestibulum vel. Nulla tincidunt molestie arcu sed ultrices. Nam sed leo sagittis, mollis augue vel, ultricies neque. Integer rutrum vitae massa vitae luctus.
+  </div>
+
+  <div class="footer-container">
+  	<button onclick={{action onclose}}>Close</button>
+  </div>
+
+{{/modal-dialog}}

@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>My Application</h1>
 
-{{outlet}}
+<p>
+  liquid-fire visibility regression introduced via <a href="https://github.com/ember-animation/liquid-fire/pull/607">this commit</a>. Note the modal should slide in for 3 seconds, instead it is hidden for 3 seconds, then just appears. This behaves as expected using <code>liquid-fire v0.29.2</code>
+</p>
+<p>
+  FIXES:<br>
+  1. If I open the file <code>node_modules/liquid-fire/addon/animate.js</code> and revert the change <a href="https://github.com/ember-animation/liquid-fire/pull/607/files#diff-5856713c422e7fbf65d5870770d00ddcL43">here</a> back to <code>opts.visibility = 'visible';</code> then it works.<br>
+  2. Also revert back to <code>liquid-fire v0.29.2</code> (pretty much the same as #1).<br>
+  3. Probably some regrettable CSS hack
+</p>
+
+<hr>
+
+<p>
+  <button type="button" {{action "toggle" "showModal"}}>Toggle Modal</button>
+</p>
+
+{{#if showModal}}
+	{{my-modal onclose=(action "toggle" "showModal")}}
+{{/if}}

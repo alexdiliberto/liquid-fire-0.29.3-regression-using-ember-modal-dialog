@@ -1,0 +1,61 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+.ember-modal-overlay.translucent {
+  background-color: rgba(black, 0.6);
+  z-index: 1040;
+}
+
+.ember-modal-dialog {
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 0;
+  max-width: 600px;
+  max-height: 100vh;
+  z-index: 1050;
+
+  &.large-modal {
+    margin: 0 20px;
+    width: 900px;
+    max-width: 900px;
+  }
+
+  .title-container {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom: 1px solid #e5e7e9;
+    background-color: white;
+    height: 60px;
+    line-height: 60px;
+
+    .header {
+      font-size: 20px;
+      margin: 0 0 0 20px;
+      display: inline-block;
+      text-align: left;
+      line-height: 60px;
+    }
+  }
+
+  .content-container {
+    padding: 20px;
+    max-height: 600px;
+    max-height: calc(100vh - 320px);
+    overflow-y: auto;
+  }
+
+  &.large-modal {
+    .content-container {
+      max-height: 800px;
+      max-height: calc(100vh - 160px);
+    }
+  }
+
+  .footer-container {
+    border-top: 1px solid #e5e7e9;
+    text-align: right;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
